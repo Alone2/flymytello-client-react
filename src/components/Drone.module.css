@@ -1,0 +1,57 @@
+.droneHolder {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.dbody {
+    width: 200px;
+    height: 200px;
+    left: -200px;
+    top: 0px;
+}
+
+.appName {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    font-size: 25px;
+}
+
+.drone {
+    position: absolute;
+}
+
+.prop {
+    width: 50px;
+    height: 50px;
+}
+
+.pr1 {
+    left: -176px;
+    top: 23px;
+}
+
+.pr3 {
+    left: -174px;
+    top: 122px;
+}
+
+.pr4 {
+    left: -75px;
+    top: 122px;
+}
+
+.pr2 {
+    left: -75px;
+    top: 27px;
+}
+
+.droneBackground {
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    margin: auto;
+    width: 100%;
+    top: 5px;
+}

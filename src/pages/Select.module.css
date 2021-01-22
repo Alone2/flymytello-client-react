@@ -1,0 +1,55 @@
+.icon {
+    width: 15em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo {
+    /* margin-top: 5%; */
+}
+.txt {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+.selectHolder {
+    margin-bottom: 2em;
+    width: 35em;
+}
+.center {
+    /* height: 100%; */
+    width: 100%;
+    margin-top: 3em;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.father {
+    height: 100%;
+    margin-top: 15em;
+    width: 100%;
+}
+
+.overlay {
+    animation-name: overlayanimation;
+    animation-duration: 1s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255);
+    z-index: 2;
+}
+@keyframes overlayanimation {
+    from {
+        background-color: rgba(255,255,255,0);
+    }
+    to {
+        background-color: rgba(255,255,255,1);
+    }
+}

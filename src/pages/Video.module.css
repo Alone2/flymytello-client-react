@@ -1,0 +1,20 @@
+.video,.videoHolder {
+    width: 100%    !important;
+    height: 100%   !important;
+    position: absolute;
+}
+.foreground {
+    z-index: 2;
+}
+.wait {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.videoButton {
+    margin: 10px
+}
