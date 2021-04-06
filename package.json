@@ -1,91 +1,91 @@
 {
-  "name": "flymytello-client-react",
-  "version": "1.0.1",
-  "private": true,
-  "main": "build/electron.js",
-  "homepage": "./",
-  "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/animejs": "^3.1.2",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.62",
-    "@types/react": "^16.9.49",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.5",
-    "animejs": "^3.2.1",
-    "npm": "^6.14.11",
-    "r": "0.0.5",
-    "react": "^16.13.1",
-    "react-anime": "^3.0.3",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "typescript": "^3.7.5"
-  },
-  "scripts": {
-    "lint": "eslint --ext=.js,.tsx,.ts .",
-    "lint-fix": "eslint --fix --ext=.js,.tsx,.ts .",
-    "eject": "react-scripts eject",
-    "start": "rescripts start",
-    "start-react": "react-scripts start",
-    "build": "rescripts build",
-    "build-react": "react-scripts build",
-    "test": "rescripts test",
-    "test-react": "react-scripts test",
-    "electron": "npm run build && electron .",
-    "build-linux": "npm run build && electron-packager . --platform linux flymytello --icon ./assets/icons/flymytello.png --overwrite --out ./flymytello-bin",
-    "build-win": "npm run build && electron-packager . --platform win32 flymytello --icon ./assets/icons/flymytello.ico --overwrite --out ./flymytello-bin",
-    "package-linux": "npm run build && electron-builder --linux deb rpm appimage",
-    "package-archlinux": "npm run build && sh ./tools/generatePKGBUILD.sh . ./flymytello-bin",
-    "package-winstore": "npm run build && sh ./tools/generateAppxManifest.sh . flymytello-bin",
-    "build-osx": "npm run build && electron-packager . --platform darwin flymytello --icon ./assets/icons/flymytello.png --overwrite --out ./flymytello-bin"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "preelectron-pack": "npm run build",
-  "electron-pack": "build --em.main=build/electron.js",
-  "build": {
-    "appId": "ch.asinz.flymytello",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
+    "name": "flymytello-client-react",
+    "version": "1.0.2",
+    "private": true,
+    "main": "build/electron.js",
+    "homepage": "./",
+    "dependencies": {
+        "@material-ui/core": "^4.11.0",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "@types/animejs": "^3.1.2",
+        "@types/jest": "^24.9.1",
+        "@types/node": "^12.12.62",
+        "@types/react": "^16.9.49",
+        "@types/react-dom": "^16.9.8",
+        "@types/react-router-dom": "^5.1.5",
+        "animejs": "^3.2.1",
+        "npm": "^6.14.11",
+        "r": "0.0.5",
+        "react": "^16.13.1",
+        "react-anime": "^3.0.3",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.3",
+        "typescript": "^3.7.5"
+    },
+    "scripts": {
+        "lint": "eslint --ext=.js,.tsx,.ts .",
+        "lint-fix": "eslint --fix --ext=.js,.tsx,.ts .",
+        "eject": "react-scripts eject",
+        "start": "rescripts start",
+        "start-react": "react-scripts start",
+        "build": "rescripts build",
+        "build-react": "react-scripts build",
+        "test": "rescripts test",
+        "test-react": "react-scripts test",
+        "electron": "npm run build && electron .",
+        "build-linux": "npm run build && electron-packager . --platform linux flymytello --icon ./assets/icons/flymytello.png --overwrite --out ./flymytello-bin",
+        "build-win": "npm run build && electron-packager . --platform win32 flymytello --icon ./assets/icons/flymytello.ico --overwrite --out ./flymytello-bin",
+        "package-linux": "npm run build && electron-builder --linux deb rpm appimage",
+        "package-archlinux": "npm run build && sh ./tools/generatePKGBUILD.sh . ./flymytello-bin",
+        "package-winstore": "npm run build && sh ./tools/generateAppxManifest.sh . flymytello-bin",
+        "build-osx": "npm run build && electron-packager . --platform darwin flymytello --icon ./assets/icons/flymytello.png --overwrite --out ./flymytello-bin"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "preelectron-pack": "npm run build",
+    "electron-pack": "build --em.main=build/electron.js",
+    "build": {
+        "appId": "ch.asinz.flymytello",
+        "files": [
+            "build/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    },
+    "devDependencies": {
+        "@rescripts/cli": "^0.0.3",
+        "@rescripts/rescript-env": "0.0.12",
+        "@typescript-eslint/eslint-plugin": "^4.13.0",
+        "@typescript-eslint/parser": "^4.13.0",
+        "concurrently": "^5.3.0",
+        "electron": "^11.1.1",
+        "electron-builder": "^22.9.1",
+        "electron-packager": "^15.2.0",
+        "eslint": "^7.23.0",
+        "eslint-plugin-react": "^7.22.0",
+        "prettier": "^2.2.1"
+    },
+    "author": {
+        "name": "Alain Sinzig",
+        "email": "contact@alainsinzig.ch",
+        "url": "https://alainsinzig.ch"
     }
-  },
-  "devDependencies": {
-    "@rescripts/cli": "0.0.15",
-    "@rescripts/rescript-env": "0.0.12",
-    "@typescript-eslint/eslint-plugin": "^4.13.0",
-    "@typescript-eslint/parser": "^4.13.0",
-    "concurrently": "^5.3.0",
-    "electron": "^11.1.1",
-    "electron-builder": "^22.9.1",
-    "electron-packager": "^15.2.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.22.0",
-    "prettier": "^2.2.1"
-  },
-  "author": {
-    "name": "Alain Sinzig",
-    "email": "contact@alainsinzig.ch",
-    "url": "https://alainsinzig.ch"
-  }
 }

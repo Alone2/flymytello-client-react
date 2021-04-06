@@ -19,6 +19,7 @@ interface signalingInit extends RTCSessionDescriptionInit {
 class DroneWebRTCConnection implements DroneConnection {
     private socket : WebSocket;
     private password : string;
+    private hasReceivedSDP : boolean;
     private rtcConnection : RTCPeerConnection;
     private rtcDataChannel : RTCDataChannel;
     // Runs when Connection is established or unsuccessful
@@ -27,6 +28,7 @@ class DroneWebRTCConnection implements DroneConnection {
     constructor(ip : string, password : string) {
         this.socket = new WebSocket("wss://" + ip + ":5001/signal");
         this.password = password;
+        this.hasReceivedSDP = false;
         this.onConnectionEstablished = () => {};
 
         // bind methods
@@ -96,12 +98,18 @@ class DroneWebRTCConnection implements DroneConnection {
     private onMessageSocketHandler(event : MessageEvent) {
         const sd = event.data;
         console.log(event.data);
-        const response : signalingInit = JSON.parse(sd);
-        this.rtcConnection.setRemoteDescription(new RTCSessionDescription({
-            sdp: response.sdp,
-            type: response.type,
-        }));
-        this.socket.close();
+        if (!this.hasReceivedSDP) {
+            const response : signalingInit = JSON.parse(sd);
+            this.rtcConnection.setRemoteDescription(new RTCSessionDescription({
+                sdp: response.sdp,
+                type: response.type,
+            }));
+            this.hasReceivedSDP = true;
+        // add ICE Candidate
+        } else {
+            const response : RTCIceCandidateInit = JSON.parse(sd);
+            this.rtcConnection.addIceCandidate(response);
+        }
     }
 }
 
